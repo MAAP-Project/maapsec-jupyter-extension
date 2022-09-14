@@ -3,9 +3,9 @@ import { request, RequestResult } from './request';
 
 export function loadMaapEnvironment() {
     return new Promise<RequestResult>((resolve, reject) => {
-      
-      var valuesUrl = new URL(PageConfig.getBaseUrl() + 'maapsec/environment');
-
+      console.log("In load function")
+      var valuesUrl = new URL(PageConfig.getBaseUrl() + 'jupyter-server-extension/maapsec/environment');
+      console.log(valuesUrl)
       request('get', valuesUrl.href).then((res: RequestResult) => {
         console.log('maapsec environment response');
         console.log(res);
@@ -22,7 +22,8 @@ export function loadMaapEnvironment() {
   export function maapLogin(service, ticket) {
       return new Promise<RequestResult>((resolve, reject) => {
         
-        var valuesUrl = new URL(PageConfig.getBaseUrl() + 'maapsec/login');
+        var valuesUrl = new URL(PageConfig.getBaseUrl() + 'jupyter-server-extension/maapsec/login');
+        console.log(valuesUrl)
         valuesUrl.searchParams.append('service', service);
         valuesUrl.searchParams.append('ticket', ticket);
   

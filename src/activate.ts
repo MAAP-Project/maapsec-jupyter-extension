@@ -36,6 +36,8 @@ export function activateLogin(app: JupyterFrontEnd,
   var lbl = 'Login';
 
   loadMaapEnvironment().then((env_result: RequestResult) => {
+    console.log("Loaded maap env")
+    console.log(env_result)
     maapEnvironment = env_result;
   });
 
@@ -43,6 +45,8 @@ export function activateLogin(app: JupyterFrontEnd,
     label: lbl,
     isEnabled: () => true,
     execute: args => {
+        console.log("testing...")
+        console.log(maapEnvironment)
         var url = 'https://' + maapEnvironment['auth_server'] + '/cas/login?service=' + encodeURIComponent(window.location.href.split('?')[0]);
         var title = 'MAAP Login';
         const w = 800;
