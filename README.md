@@ -1,35 +1,29 @@
-# maapsec_jupyter_extension
+# MAAP Security Jupyter Extension
 
-[![Github Actions Status](https://github.com/github_username/maapsec-jupyter-extension/workflows/Build/badge.svg)](https://github.com/github_username/maapsec-jupyter-extension/actions/workflows/build.yml)
-
-A JupyterLab extension.
-
-
-
+JupyterLab extension that allows users to login to MAAP CAS and access user profile information.  
+&nbsp;
 ## Requirements
 
-* JupyterLab >= 3.0
-
+* JupyterLab >= 3.4
+* [jupyter-server-extension](https://github.com/MAAP-Project/jupyter-server-extension)  
+&nbsp;
 ## Install
 
 To install the extension, execute:
 
 ```bash
-pip install maapsec_jupyter_extension
-```
-
+jupyter labextension install @maap-jupyterlab/maapsec-jupyter-extension
+```  
+&nbsp;
 ## Uninstall
 
 To remove the extension, execute:
 
 ```bash
-pip uninstall maapsec_jupyter_extension
-```
-
-
-## Contributing
-
-### Development install
+jupyter labextension uninstall @maap-jupyterlab/maapsec-jupyter-extension
+```  
+&nbsp;
+## Development install
 
 Note: You will need NodeJS to build the extension package.
 
@@ -63,9 +57,9 @@ By default, the `jlpm build` command generates the source maps for this extensio
 
 ```bash
 jupyter lab build --minimize=False
-```
-
-### Development uninstall
+```  
+&nbsp;
+## Development uninstall
 
 ```bash
 pip uninstall maapsec_jupyter_extension
@@ -75,6 +69,5 @@ In development mode, you will also need to remove the symlink created by `jupyte
 command. To find its location, you can run `jupyter labextension list` to figure out where the `labextensions`
 folder is located. Then you can remove the symlink named `maapsec-jupyter-extension` within that folder.
 
-### Packaging the extension
-
-See [RELEASE](RELEASE.md)
+## Questions?
+Refer to the [Q&A discussion board](https://github.com/MAAP-Project/maapsec-jupyter-extension/discussions/categories/q-a).
